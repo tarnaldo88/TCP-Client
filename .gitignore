@@ -13,3 +13,6 @@ TCP-Client/TCP-Client/TCP-Client.vcxproj.filters
 TCP-Client/.vs/TCP-Client/FileContentIndex/3a9a8bee-8bcd-4959-8cec-eea59d6bba45.vsidx
 TCP-Client/.vs/TCP-Client/FileContentIndex/26d61e2c-4cca-4d4e-8483-170580835b32.vsidx
 /TCP-Client/.vs
+/TCP-Client/TCP-Client/x64
+TCP-Client/x64/Debug/TCP-Client.exe
+TCP-Client/x64/Debug/TCP-Client.pdb

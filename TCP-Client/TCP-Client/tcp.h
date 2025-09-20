@@ -1,5 +1,5 @@
 #include <iostream>
-#include <ws2tcpip.h>
+#include <WS2tcpip.h>
 #include <string>
 
-#pragma comment(lib, "ws2_32lib")
+#pragma comment(lib, "ws2_32.lib")

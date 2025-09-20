@@ -57,9 +57,22 @@ void main()
 		{
 			//send text
 			int sendResult = send(sock, user_input.c_str(), user_input.size() + 1, 0);
+
+			if(sendResult != SOCKET_ERROR)
+			{
+				ZeroMemory(buf, 4096);
+				int bytesRecieved = recv(sock, buf, 4096, 0);
+
+				//echo response to console if something received
+				if(bytesRecieved > 0)
+				{
+					std::cout << "SERVER> " << std::string(buf, 0, bytesRecieved) << std::endl;
+				}
+			}
 		}		
 
 	} while (user_input.size() > 0);
 
 	//gracefully close down
+
 }

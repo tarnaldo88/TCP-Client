@@ -74,5 +74,6 @@ void main()
 	} while (user_input.size() > 0);
 
 	//gracefully close down
-
+	closesocket(sock);
+	WSACleanup();
 }

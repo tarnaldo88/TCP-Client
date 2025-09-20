@@ -22,12 +22,27 @@ void main()
 	if (sock == INVALID_SOCKET)
 	{
 		std::cerr << "cannot create socket, Err #" << WSAGetLastError() << std::endl;
+		WSACleanup();
+		return;
 	}
 
 	//fill hint structure
 	sockaddr_in hint;
+	hint.sin_family = AF_INET;
+	hint.sin_port = htons(port);
+	inet_pton(AF_INET, ipAddress.c_str(), &hint.sin_addr);
 	 
 	//connect to serv
+	int connResult = connect(sock, (sockaddr*)&hint, sizeof(hint));
+
+	if (connResult == SOCKET_ERROR)
+	{
+		std::cerr << "cannot connect to server, Err # " << WSAGetLastError() << std::endl;
+		closesocket(sock);
+		WSACleanup();
+		return;
+	}
+	 
 	// do-while to receive and send data
 	//gracefully close down
 }

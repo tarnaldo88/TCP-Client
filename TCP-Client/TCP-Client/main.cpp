@@ -44,5 +44,22 @@ void main()
 	}
 	 
 	// do-while to receive and send data
+	char buf[4096];
+	std::string user_input;
+
+	do 
+	{
+		//prompt for text
+		std::cout << "> ";
+		std::getline(std::cin, user_input);
+
+		if (user_input.size() > 0)
+		{
+			//send text
+			int sendResult = send(sock, user_input.c_str(), user_input.size() + 1, 0);
+		}		
+
+	} while (user_input.size() > 0);
+
 	//gracefully close down
 }
